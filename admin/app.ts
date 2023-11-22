@@ -17,7 +17,7 @@ app.use(
 connect();
 app.use(express.json());
 ampq.connect(
-  "amqps://pgzzbmfy:qtm1vCdG-NW7YSwlH9I0VJE8cQWiqs2o@puffin.rmq2.cloudamqp.com/pgzzbmfy",
+  process.env.RABBITMQ_URL,
   (error, connection: Connection) => {
 
     if (error) throw new Error(error);
